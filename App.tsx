@@ -21,7 +21,7 @@ export default function App() {
   }
   
   return (
-    <Home></Home>
-    //<Login></Login>
+    //<Home></Home>
+    <Login></Login>
   );
 }

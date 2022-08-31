@@ -41,7 +41,7 @@ flex-direction: row;
 flex-flow: row-wrap;
 justify-content: space-between;
 `
-export const Category = styled.View`
+export const CategoryGroup = styled.View`
 margin: 2px;
 width: 120px;
 align-self:center;

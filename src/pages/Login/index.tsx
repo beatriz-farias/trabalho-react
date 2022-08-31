@@ -1,30 +1,23 @@
 import React from 'react'
 import { Container, LoginContainer, Menu, LogoSymbol, Slogan, InputGroup, InputBox, InputLabel, MainBtn, MainBtnText } from './style'
+import MainMenu from '../../components/Menu';
+import Button from '../../components/Button';
+import InputGrp from '../../components/InputGroup';
+import { inputBoxes } from '../../constants/inputBoxes';
 
 function Login() {
     return (
         <Container>
-            <Menu>
-                <LogoSymbol source={require('../../assets/logo.svg')}/>
-            </Menu>
+            <MainMenu/>
             <Slogan>Peças para seu computador com preços que cabem no seu bolso</Slogan>
             <LoginContainer>
-                <InputGroup>
-                    <InputLabel>Nome</InputLabel>
-                    <InputBox placeholder="Digite seu nome"></InputBox>
-                </InputGroup>
-                <InputGroup>
-                    <InputLabel>Email</InputLabel>
-                    <InputBox placeholder="Digite seu email"></InputBox>
-                </InputGroup>
-                <InputGroup>
-                    <InputLabel>Senha</InputLabel>
-                    <InputBox placeholder="Digite sua senha"></InputBox>
-                </InputGroup>
+            {
+                inputBoxes.map(input => 
+                    <InputGrp key={input.index} InputName={input.name} PlaceholderTxt={input.content}/>
+                )
+            }
             </LoginContainer>
-            <MainBtn>
-            <MainBtnText>Continuar</MainBtnText>
-            </MainBtn>
+            <Button value={'Continuar'}/>
         </Container>
     );
 }
